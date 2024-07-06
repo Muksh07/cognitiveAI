@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace backend.Controllers
 {
-   [ApiController]
+    [ApiController]
     [Route("api/[controller]")]
     public class ProjectController : ControllerBase
     {
@@ -49,21 +49,37 @@ namespace backend.Controllers
             return Ok(new { path = projectPath, folderStructure });
         }
 
+        // private object GetFolderStructure(string path)
+        // {
+        //     var directoryInfo = new DirectoryInfo(path);
+        //     return GetDirectoryStructure(directoryInfo);
+        // }
+
+        // private object GetDirectoryStructure(DirectoryInfo directoryInfo)
+        // {
+        //     return new
+        //     {
+        //         Name = directoryInfo.Name,
+        //         Files = directoryInfo.GetFiles().Select(file => file.Name).ToList(),
+        //         Folders = directoryInfo.GetDirectories().Select(GetDirectoryStructure).ToList()
+        //     };
+        // }
         private object GetFolderStructure(string path)
         {
             var directoryInfo = new DirectoryInfo(path);
             return GetDirectoryStructure(directoryInfo);
         }
 
+
         private object GetDirectoryStructure(DirectoryInfo directoryInfo)
         {
             return new
             {
-                Name = directoryInfo.Name,
-                Files = directoryInfo.GetFiles().Select(file => file.Name).ToList(),
-                Folders = directoryInfo.GetDirectories().Select(GetDirectoryStructure).ToList()
+                name = directoryInfo.Name,
+                files = directoryInfo.GetFiles().Select(file => new { name = file.Name, content = System.IO.File.ReadAllText(file.FullName) }).ToList(),
+                folders = directoryInfo.GetDirectories().Select(GetDirectoryStructure).ToList()
             };
         }
-        
+
     }
 }

@@ -18,6 +18,7 @@ export class ProjectFormComponent implements OnInit
   framework = '.NET 8.0';
   applicationType = ''; 
   folderStructure: any = null;
+  selectedFileContent: string = '';
 
   constructor(private projectService: ProjectService) { }
 
@@ -39,16 +40,23 @@ export class ProjectFormComponent implements OnInit
     });
   }
 
-  formatFolderStructure(structure: any, indent: string = ''): string 
-  {
-    let result = `${indent}${structure.name}\n`;
-    structure.files.forEach((file: string) => {
-      result += `${indent}  ${file}\n`;
-    });
-    structure.folders.forEach((folder: any) => {
-      result += this.formatFolderStructure(folder, indent + '  ');
-    });
-    return result;
+  displayFileContent(content: string) {
+    this.selectedFileContent = content;
+  }
+
+  // formatFolderStructure(structure: any, indent: string = ''): string {
+  //   let result = `${indent}${structure.name}\n`;
+  //   structure.files.forEach((file: any) => {
+  //     result += `${indent}  ${file.name}\n`;
+  //   });
+  //   structure.folders.forEach((folder: any) => {
+  //     result += this.formatFolderStructure(folder, indent + '  ');
+  //   });
+  //   return result;
+  // }
+
+  toggleFolder(folder: any) {
+    folder.expanded = !folder.expanded;
   }
 
 }
