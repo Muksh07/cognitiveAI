@@ -1,93 +1,94 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-header">
-          <h2>Create New Project</h2>
-        </div>
-        <div class="card-body">
-          <form (ngSubmit)="onSubmit()">
-            <div class="form-group">
-              <label for="projectName">Project Name:</label>
-              <input id="projectName" [(ngModel)]="projectName" name="projectName" class="form-control" required>
-            </div>
-            <div class="form-group mt-3">
-              <label for="location">Location:</label>
-              <input id="location" [(ngModel)]="location" name="location" class="form-control" required>
-            </div>
-            <div class="form-group mt-3">
-              <label for="applicationType">Application Type:</label>
-              <select id="applicationType" [(ngModel)]="applicationType" name="applicationType" class="form-control" required>
-                <option value="console">Console App</option>
-                <option value="webapi">ASP.NET Core Web API</option>
-                <option value="classlib">Class Library</option>
-                <option value="razorclasslib">Razor Class Library</option>
-                <option value="worker">Worker Service</option>
-                <option value="web">ASP.NET Core Empty</option>
-                <option value="mvc">ASP.NET Core Web App</option>
-                <option value="winforms">Windows Forms App</option>
-              </select>
-            </div>
-            <div class="form-group mt-3">
-              <label for="framework">Framework:</label>
-              <select id="framework" [(ngModel)]="framework" name="framework" class="form-control" required>
-                <option value=".NET 8.0">.NET 8.0</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary mt-4">Generate</button>
-          </form>
-        </div>
+<div class="container">
+  <!-- Part 1: Generate Form -->
+  <div class="part" id="generateForm">
+    <div class="card">
+      <div class="card-header">
+        <h2>Create New Project</h2>
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="projectName">Project Name:</label>
+            <input id="projectName" [(ngModel)]="projectName" name="projectName" class="form-control" required>
+          </div>
+          <div class="form-group mt-3">
+            <label for="location">Location:</label>
+            <input id="location" [(ngModel)]="location" name="location" class="form-control" required>
+          </div>
+          <div class="form-group mt-3">
+            <label for="applicationType">Application Type:</label>
+            <select id="applicationType" [(ngModel)]="applicationType" name="applicationType" class="form-control" required>
+              <option value="console">Console App</option>
+              <option value="webapi">ASP.NET Core Web API</option>
+              <option value="classlib">Class Library</option>
+              <option value="razorclasslib">Razor Class Library</option>
+              <option value="worker">Worker Service</option>
+              <option value="web">ASP.NET Core Empty</option>
+              <option value="mvc">ASP.NET Core Web App</option>
+              <option value="winforms">Windows Forms App</option>
+            </select>
+          </div>
+          <div class="form-group mt-3">
+            <label for="framework">Framework:</label>
+            <select id="framework" [(ngModel)]="framework" name="framework" class="form-control" required>
+              <option value=".NET 8.0">.NET 8.0</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary mt-4">Generate</button>
+        </form>
       </div>
     </div>
-    <div class="col-md-6">
-      <div *ngIf="folderStructure" class="mt-3">
+  </div>
+
+  <!-- Part 2: Folder Structure -->
+  <div class="part" id="folderStructure" *ngIf="folderStructure">
+    <div class="mt-3">
+      <div class="folder-structure-header">
         <h3>Generated Folder Structure:</h3>
-        <div style="display: flex; height: 70vh;">
-          <div style="width: 50%; overflow-y: auto;">
-            <ul>
-              <li>{{ folderStructure.name }}
-                <ul>
-                  <li *ngFor="let file of folderStructure.files" (click)="displayFileContent(file.content)">
+      </div>
+      <ul>
+        <li>{{ folderStructure.name }}
+          <ul>
+            <!-- Iterate through files at the root level -->
+            <li *ngFor="let file of folderStructure.files" class="file" (click)="displayFileContent(file.content)">
+              {{ file.name }}
+            </li>
+            <!-- Iterate through folders at the root level -->
+            <ng-container *ngFor="let folder of folderStructure.folders">
+              <li>
+                <span (click)="toggleFolder(folder)">{{ folder.name }}</span>
+                <ul *ngIf="folder.expanded">
+                  <!-- Iterate through files inside the folder -->
+                  <li *ngFor="let file of folder.files" class="file" (click)="displayFileContent(file.content)">
                     {{ file.name }}
                   </li>
-                  <ng-container *ngFor="let folder of folderStructure.folders">
-                    <li (click)="toggleFolder(folder)">{{ folder.name }}
-                      <ul *ngIf="folder.expanded">
-                        <li *ngFor="let file of folder.files" (click)="displayFileContent(file.content)">
-                          {{ file.name }}
+                  <!-- Iterate through subfolders inside the folder -->
+                  <ng-container *ngFor="let subfolder of folder.folders">
+                    <li>
+                      <span (click)="toggleFolder(subfolder)">{{ subfolder.name }}</span>
+                      <ul *ngIf="subfolder.expanded">
+                        <!-- Iterate through files inside the subfolder -->
+                        <li *ngFor="let subfile of subfolder.files" class="file" (click)="displayFileContent(subfile.content)">
+                          {{ subfile.name }}
                         </li>
-                        <ng-container *ngFor="let subfolder of folder.folders">
-                          <li (click)="toggleFolder(subfolder)">{{ subfolder.name }}
-                            <ul *ngIf="subfolder.expanded">
-                              <li *ngFor="let subfile of subfolder.files" (click)="displayFileContent(subfile.content)">
-                                {{ subfile.name }}
-                              </li>
-                              <ng-container *ngFor="let subsubfolder of subfolder.folders">
-                                <li (click)="toggleFolder(subsubfolder)">{{ subsubfolder.name }}
-                                  <ul *ngIf="subsubfolder.expanded">
-                                    <li *ngFor="let subsubfile of subsubfolder.files" (click)="displayFileContent(subsubfile.content)">
-                                      {{ subsubfile.name }}
-                                    </li>
-                                  </ul>
-                                </li>
-                              </ng-container>
-                            </ul>
-                          </li>
-                        </ng-container>
+                        <!-- Further nesting can continue similarly -->
                       </ul>
                     </li>
                   </ng-container>
                 </ul>
               </li>
-            </ul>
-          </div>
-          <div style="width: 50%; border-left: 1px solid #ccc; padding-left: 20px; overflow-y: auto;">
-            <pre>{{ selectedFileContent }}</pre>
-          </div>
-        </div>
-      </div>
+            </ng-container>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Part 3: File Content -->
+  <div class="part" id="fileContent" *ngIf="selectedFileContent !== ''">
+    <div class="file-content">
+      <h3>File Content:</h3>
+      <pre>{{ selectedFileContent }}</pre>
     </div>
   </div>
 </div>
-
-
