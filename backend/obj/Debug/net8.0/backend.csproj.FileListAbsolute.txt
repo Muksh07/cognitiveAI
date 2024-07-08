@@ -32,3 +32,37 @@ C:\cognitiveAI\backend\obj\Debug\net8.0\backend.pdb
 C:\cognitiveAI\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\cognitiveAI\backend\obj\Debug\net8.0\ref\backend.dll
 C:\cognitiveAI\backend\obj\Debug\net8.0\backend.sourcelink.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\appsettings.Development.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\appsettings.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\backend.exe
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\backend.deps.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\backend.runtimeconfig.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\backend.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\backend.pdb
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.csproj.AssemblyReference.cache
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.GeneratedMSBuildEditorConfig.editorconfig
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.AssemblyInfoInputs.cache
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.AssemblyInfo.cs
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.csproj.CoreCompileInputs.cache
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.MvcApplicationPartsAssemblyInfo.cs
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.MvcApplicationPartsAssemblyInfo.cache
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.sourcelink.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets.build.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets.development.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets\msbuild.backend.Microsoft.AspNetCore.StaticWebAssets.props
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets\msbuild.build.backend.props
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.backend.props
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.backend.props
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\staticwebassets.pack.json
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\scopedcss\bundle\backend.styles.css
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.csproj.Up2Date
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\refint\backend.dll
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.pdb
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
+C:\CognitiveAI\folder structure and file content\cognitiveAI\backend\obj\Debug\net8.0\ref\backend.dll

@@ -1,4 +1,8 @@
 /* Container styling */
+.card{
+  background-color: black;
+  color: white;
+}
 .container {
     background-color: black;
     color: white;
@@ -43,13 +47,11 @@
     position: sticky;
     top: 0;
     background-color: black;
-    padding: 10px;
-    margin-top: 0;
+    padding: 0px;
+    margin-top: 0px;
     z-index: 1; /* Ensure it's above the scrollable content */
   }
   
   /* Adjustments for "File Content" section */
-  .file-content {
-    margin-top: 20px; /* Space for the fixed header */
-  }
+
   
